@@ -1,12 +1,8 @@
 import sys
 
-def processLine(line):
-    return processTokens(line.split())
-
-def processTokens(tokens):
-    mysum = sum( [int(s) for s in tokens if s.isdigit()] )
-    return mysum
+def sum_numbers(line):
+    return sum( [int(s) for s in line.split() if s.isdigit()] )
 
 if __name__ == "__main__":
     for line in sys.stdin:
-        print(processLine(line))
+        print(sum_numbers(line))
