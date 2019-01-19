@@ -11,7 +11,7 @@ Local invocation
 
 Just for reference, this is what I want to achieve:
 
-$ cat | python3===
+    $ cat | python3
 
 Toy project experimenting how to use a Python app inside a Docker container to stream commands via STDIN
 and receive responses via STDOUT just like you would do with a local Python app.
