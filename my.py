@@ -10,7 +10,8 @@ def getArgument(name):
 	return inputs[name]
 
 def returnScore(score):
-    print(json.dumps(score))
+	scoreMap ={ "score": score }
+	print(json.dumps(scoreMap))
 
 def dumpToInputfile():
 	file = open("input.json", "w")
