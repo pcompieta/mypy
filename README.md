@@ -6,21 +6,13 @@ and receive responses via STDOUT just like you would do with a local Python app.
 
 This might help in deciding how to invoke apps embedded with Docker.
 
-Local invocation
+Local invocation (w/o container)
 ===
 
 Just for reference, this is what I want to achieve:
 
-    $ cat | python3 my.py 
-    1 2 3
-    6
-    10 20 30
-    60
-    ^CTraceback (most recent call last):
-      File "my.py", line 11, in <module>
-          for line in sys.stdin:
-          KeyboardInterrupt
-          my.py 
+    $ echo '{"first" : 2, "second" : 3}' | python3 my.py 
+    5
 
 Building the Docker image
 ===
@@ -30,13 +22,5 @@ Building the Docker image
 Invoking it
 ===
 
-    $ cat | docker run --rm -i mypy 
-    1 2 3
-    6
-    10 20 30
-    60
-    ^CTraceback (most recent call last):
-      File "my.py", line 12, in <module>
-        for line in sys.stdin:
-    KeyboardInterrupt
-
+    $ echo '{"first" : 2, "second" : 3}' | docker run --rm -i mypy 
+    5
