@@ -1,17 +1,10 @@
-import sys, json;
+import sys;
+import mmlibrary as mm;
 
-# both these functions are defined in a 'mmlibrary.py' file
-
-def getArgument(name):
-	json_file = open("input.json")
-	json_data = json_file.read()
-	inputs = json.loads(json_data)
-	json_file.close()
-	return inputs[name]
-
-def returnScore(score):
-	scoreMap ={ "score": score }
-	print(json.dumps(scoreMap))
+def mymodel():
+	first = mm.getArgument("first")
+	second = mm.getArgument("second")
+	return first + second
 
 def dumpToInputfile():
 	file = open("input.json", "w")
@@ -19,16 +12,9 @@ def dumpToInputfile():
 		file.write(line)
 	file.close()
 
-# both these functions are defined in a 'mmlibrary.py' file
-
-def mymodel():
-	first = getArgument("first")
-	second = getArgument("second")
-	return first + second
-
 if __name__ == "__main__":
 	dumpToInputfile()
 	
 	res = mymodel()
-	
-	returnScore(res)
+
+	mm.returnScore(res)
