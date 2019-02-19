@@ -9,4 +9,4 @@ def dumpInputToJsonFile():
 
 if __name__ == "__main__":
 	dumpInputToJsonFile()
-	call(["python3", "mymodel.py"])
+	call(["python3", "model.py"])

@@ -11,3 +11,6 @@ def getArgument(name):
 def returnScore(score):
 	scoreMap = { "score" : score }
 	print(json.dumps(scoreMap))
+
+def getModel():
+	return "/app/mygem.bin"
