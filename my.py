@@ -1,10 +1,5 @@
-import sys;
-import mmlibrary as mm;
-
-def mymodel():
-	first = mm.getArgument("first")
-	second = mm.getArgument("second")
-	return first + second
+import sys
+from subprocess import call
 
 def dumpToInputfile():
 	file = open("input.json", "w")
@@ -14,7 +9,4 @@ def dumpToInputfile():
 
 if __name__ == "__main__":
 	dumpToInputfile()
-	
-	res = mymodel()
-
-	mm.returnScore(res)
+	call(["python3", "mymodel.py"])
